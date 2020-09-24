@@ -1,6 +1,7 @@
 package com.tcs.adMarLearnings;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
@@ -20,6 +21,11 @@ public class MainApp {
 	      HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
 	      objB.getMessage();
 	      
+	      /**
+	       * Testing Functionality: Initialization and Destruction Callbacks
+	       * registerShutdownHook() is added to kill the bean and release the resources held
+	       */
+	      ((AbstractApplicationContext) context).registerShutdownHook();
 	      
 	      
 	   }
