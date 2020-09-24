@@ -1,35 +1,37 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 
-<beans xmlns = "http://www.springframework.org/schema/beans"
-   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-   xmlns:context = "http://www.springframework.org/schema/context"
-   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
-   
 
-   <bean id = "helloWorld" class = "com.tcs.adMarLearnings.HelloWorld">
-      <property name = "message" value = "Hello World!"/>
-   </bean>
-   
-   <context:component-scan base-package="com.tcs.adMarLearnings"></context:component-scan>
-   
-   <bean id = "vehicle" class = "com.tcs.adMarLearnings.Car">     
-   </bean>
-   
-   <!-- This is the Setter Injection Code -->
-   <bean id = "brand" class="com.tcs.adMarLearnings.Brand">
-   		<property name ="companyName" value="Audi"></property>
-   </bean>
-   
-   <!--  This is the Constructor Injection Code -->
-   <bean id = "tyre" class="com.tcs.adMarLearnings.Tyre">
-   <constructor-arg value ="MFR"></constructor-arg>
-   </bean>
-   
-   <bean  id = "brake" class="com.tcs.adMarLearnings.Brake"></bean>
-   
-   
+	<!-- Singleton Bean  scope="singleton"  Prototype Bean scope="prototype"-->
+	<bean id="helloWorld" class="com.tcs.adMarLearnings.HelloWorld"
+		scope="prototype">
+		<property name="message" value="Hello World!" />
+	</bean>
+
+	<context:component-scan
+		base-package="com.tcs.adMarLearnings"></context:component-scan>
+
+	<bean id="vehicle" class="com.tcs.adMarLearnings.Car">
+	</bean>
+
+	<!-- This is the Setter Injection Code -->
+	<bean id="brand" class="com.tcs.adMarLearnings.Brand">
+		<property name="companyName" value="Audi"></property>
+	</bean>
+
+	<!-- This is the Constructor Injection Code -->
+	<bean id="tyre" class="com.tcs.adMarLearnings.Tyre">
+		<constructor-arg value="MFR"></constructor-arg>
+	</bean>
+
+	<bean id="brake" class="com.tcs.adMarLearnings.Brake"></bean>
+
+
 
 </beans>

@@ -9,5 +9,18 @@ public class MainApp {
 	    		  ClassPathXmlApplicationContext("file:src/main/java/com/tcs/adMarLearnings/spring.xml");
 	      HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
 	      obj.getMessage();
+	      
+	      /**
+	       * Testing Functionality: Singleton Bean
+	       * Thus the object that the bean should return will be only 1
+	       * 
+	       */
+	      obj.setMessage("I'm object A");
+	      obj.getMessage();
+	      HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
+	      objB.getMessage();
+	      
+	      
+	      
 	   }
 	}
